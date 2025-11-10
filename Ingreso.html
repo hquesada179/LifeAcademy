@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNAB LifeAcademy - Iniciar Sesión</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2d79d9f3b.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .blur-overlay {
+      background: rgba(0, 51, 102, 0.85);
+      /* Azul institucional UNAB */
+      backdrop-filter: blur(6px);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 1rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-gradient {
+      background: linear-gradient(90deg, #003366, #0055aa);
+      transition: all 0.3s ease;
+    }
+
+    .btn-gradient:hover {
+      background: linear-gradient(90deg, #004080, #0077cc);
+    }
+
+    .logo-circle {
+      box-shadow: 0 6px 16px rgba(0, 51, 102, 0.5);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="min-h-screen relative flex items-center justify-center p-4">
+    <!-- Fondo del campus UNAB -->
+    <div class="absolute inset-0 bg-cover bg-center"
+      style="background-image: url('https://unab.edu.co/wp-content/uploads/2022/05/El-Jardin-UNAB.jpg');"></div>
+
+    <div class="absolute inset-0 blur-overlay"></div>
+
+    <div class="relative z-10 w-full max-w-md text-white">
+      <div class="text-center mb-8">
+        <!-- Logo UNAB LifeAcademy -->
+        <div
+          class="inline-flex items-center justify-center w-44 h-44 bg-white rounded-full mb-4 logo-circle overflow-hidden">
+          <img src="Login_img/Logo.png" alt="Logo UNAB LifeAcademy" class="w-[95%] h-[95%] object-cover scale-110">
+        </div>
+
+        <h1 class="text-4xl font-bold mb-2">UNAB LifeAcademy</h1>
+        <p class="text-blue-100 text-lg">
+          Accede a tu espacio académico y participa activamente en la vida universitaria UNAB
+        </p>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="text-center mb-4">
+          <h2 class="text-2xl font-semibold">Iniciar Sesión</h2>
+          <p class="text-gray-200 text-sm">Ingresa tus credenciales institucionales para acceder</p>
+        </div>
+
+        <form id="loginForm" action="login.php" method="POST" class="space-y-4">
+          <div class="space-y-1">
+            <label for="usuario" class="text-white font-medium">Usuario UNAB</label>
+            <input id="usuario" name="usuario" type="text" placeholder="Ingresa tu usuario institucional" required
+              class="w-full p-3 rounded-md bg-white text-black placeholder-gray-500 focus:border-[#003366] focus:ring-[#003366]">
+          </div>
+
+          <div class="space-y-1">
+            <label for="contraseña" class="text-white font-medium">Contraseña</label>
+            <input id="contraseña" name="contraseña" type="password" placeholder="Ingresa tu contraseña" required
+              class="w-full p-3 rounded-md bg-white text-black placeholder-gray-500 focus:border-[#003366] focus:ring-[#003366]">
+          </div>
+
+          <button type="submit"
+            class="w-full py-3 rounded-md btn-gradient text-white font-semibold shadow-lg flex items-center justify-center space-x-2">
+            <i class="fas fa-sign-in-alt"></i><span>Iniciar Sesión</span>
+          </button>
+        </form>
+
+
+        <div class="mt-6 text-center">
+          <p class="text-sm text-gray-200 mb-2">¿Eres nuevo en LifeAcademy?</p>
+          <button id="registerBtn" type="button"
+            class="w-full py-3 rounded-md border border-white/40 text-white bg-white/5 hover:bg-white/15 hover:border-[#003366] transition-all">
+            Crear cuenta UNAB
+          </button>
+        </div>
+      </div>
+
+      <div class="mt-6 text-center">
+        <p class="text-blue-100 text-sm">
+          © 2025 Universidad Autónoma de Bucaramanga - Proyecto UNAB LifeAcademy
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    // 🔹 Redirige al registro (Crear_usuario.html)
+    document.getElementById('registerBtn').addEventListener('click', function () {
+      window.location.href = "Crear_usuario.html";
+    });
+  </script>
+</body>
+
+</html>
